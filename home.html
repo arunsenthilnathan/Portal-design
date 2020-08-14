@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Portal frame building: <b></h1>
+
+
+<form action="add" method='post'>
+
+    {% csrf_token %}
+    <h2>Project Information:<b></h2>
+    Project Name: <input type="text" name="pron"><br>
+    Project Address: <input type="text" name="proa"><br>
+    <h2>Site details:<b></h2>
+    Site elevation: <input type="text" name="siel"><br>
+    Site wind speed: <input type="text" name="ws_"><br>
+    Nearest Town: <input type="text" name="z_"><br>
+    Governing Council: <input type="text" name="coun"><br>
+    <h2>Building Information:<b></h2>
+    Portal span: <input type="text" name="pspan_"><br>
+    Length of building: <input type="text" name="len_"><br>
+    Bay spacing: <input type="text" name="span_"><br>
+    Knee height: <input type="text" name="knee_"><br>
+    Roof pitch: <input type="text" name="pitch_"><br>
+    Type of building: <input type="text" name="type"><br>
+    <br>
+    <br>
+    
+    <input type="submit">
+
+    <button type="button">Print calcs</button>
+
+    <button type="button">Print drawing</button>
+
+{% endblock %}

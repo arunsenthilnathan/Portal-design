@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<h1>Design Results: </h1>
+Portal span: {{pspan_}} m <br>
+Length of building: {{len_}} m <br>
+Bay spacing: {{span_}} m <br>
+Knee height: {{knee_}} m <br>
+Roof pitch: {{pitch_}} degree <br>
+
+
+<br> <b> Purlin results: </b> <br>
+{% for b in purlin_.itertuples %}
+    <div class="row">
+    <td> {{ b.section }} at </td>
+    <td> {{ b.spacing }} crs</td>
+    </div>
+{% endfor %}
+
+<br> Sidewall Girts result: <br>
+{% for c in sidegirt_.itertuples %}
+    <div class="row">
+    <td> {{ c.section }} at </td>
+    <td> {{ c.spacing }} crs</td>
+    </div>
+{% endfor %}
+
+<br> Endwall Girts result: <br>
+{% for d in endgirt_.itertuples %}
+    <div class="row">
+    <td> {{ d.section }} at </td>
+    <td> {{ d.spacing }} crs</td>
+    </div>
+{% endfor %}
+
+{% endblock content %}
